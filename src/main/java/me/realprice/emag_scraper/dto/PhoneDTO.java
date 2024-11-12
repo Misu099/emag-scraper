@@ -9,21 +9,24 @@ public class PhoneDTO implements Serializable {
 
     private String name;
     private int id;
+    private int offerId;
+    private String url;
     private float price;
     private float recommendedRetailPrice;
     private String brand;
     private float averageRating;
 
 
-    public PhoneDTO(String name, int id, float price, float recommendedRetailPrice, String brand, float averageRating) {
+    public PhoneDTO(String name, int id, int offerId, String url, float price, float recommendedRetailPrice, String brand, float averageRating) {
         this.name = name;
         this.id = id;
+        this.offerId = offerId;
+        this.url = url;
         this.price = price;
         this.recommendedRetailPrice = recommendedRetailPrice;
         this.brand = brand;
         this.averageRating = averageRating;
     }
-
 
     public PhoneDTO() {
     }
@@ -42,6 +45,22 @@ public class PhoneDTO implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getOfferId() {
+        return offerId;
+    }
+
+    public void setOfferId(int offerId) {
+        this.offerId = offerId;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public float getPrice() {
@@ -81,6 +100,8 @@ public class PhoneDTO implements Serializable {
         return "PhoneDTO{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
+                ", offerId=" + offerId +
+                ", url='" + url + '\'' +
                 ", price=" + price +
                 ", recommendedRetailPrice=" + recommendedRetailPrice +
                 ", brand='" + brand + '\'' +
