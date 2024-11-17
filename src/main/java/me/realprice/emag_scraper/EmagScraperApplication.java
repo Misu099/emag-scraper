@@ -1,5 +1,6 @@
 package me.realprice.emag_scraper;
 
+import me.realprice.emag_scraper.utils.ResponseParser;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -69,13 +70,14 @@ public class EmagScraperApplication {
 
         Elements elements = null;
         if (element != null) {
-             elements = element.select(".card-item");
+            ResponseParser.parse(element);
+            elements = element.select(".card-item");
         }
         if (elements == null || elements.isEmpty()) {
             logger.info("No data found");
             return;
         }
-        logger.info(elements.getFirst().outerHtml());
+        //  logger.info(elements.getFirst().outerHtml());
 
         try {
             Files.writeString(Path.of("phone.html"), elements.getFirst().outerHtml());
