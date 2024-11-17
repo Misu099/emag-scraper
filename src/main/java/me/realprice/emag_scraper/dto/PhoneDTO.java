@@ -12,12 +12,16 @@ public class PhoneDTO implements Serializable {
     private int offerId;
     private String url;
     private float price;
-    private float recommendedRetailPrice;
-    private String brand;
+    //TODO: make this a float and change the logic for parser
+    private String recommendedRetailPrice;
     private float averageRating;
+    private String brand;
 
 
-    public PhoneDTO(String name, int id, int offerId, String url, float price, float recommendedRetailPrice, String brand, float averageRating) {
+    public PhoneDTO() {
+    }
+
+    public PhoneDTO(String name, int id, int offerId, String url, float price, String recommendedRetailPrice, float averageRating, String brand) {
         this.name = name;
         this.id = id;
         this.offerId = offerId;
@@ -28,8 +32,16 @@ public class PhoneDTO implements Serializable {
         this.averageRating = averageRating;
     }
 
-    public PhoneDTO() {
+    public PhoneDTO(String phoneName, int phoneId, int phoneOfferId, String phoneUrl, float phonePrice, String phoneBrand) {
+        this.name = phoneName;
+        this.id = phoneId;
+        this.offerId = phoneOfferId;
+        this.url = phoneUrl;
+        this.price = phonePrice;
+        this.brand = phoneBrand;
     }
+
+
 
     public String getName() {
         return name;
@@ -71,11 +83,11 @@ public class PhoneDTO implements Serializable {
         this.price = price;
     }
 
-    public float getRecommendedRetailPrice() {
+    public String getRecommendedRetailPrice() {
         return recommendedRetailPrice;
     }
 
-    public void setRecommendedRetailPrice(float recommendedRetailPrice) {
+    public void setRecommendedRetailPrice(String recommendedRetailPrice) {
         this.recommendedRetailPrice = recommendedRetailPrice;
     }
 
@@ -104,8 +116,8 @@ public class PhoneDTO implements Serializable {
                 ", url='" + url + '\'' +
                 ", price=" + price +
                 ", recommendedRetailPrice=" + recommendedRetailPrice +
-                ", brand='" + brand + '\'' +
                 ", averageRating=" + averageRating +
+                ", brand='" + brand + '\'' +
                 '}';
     }
 }
