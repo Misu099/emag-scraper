@@ -9,11 +9,8 @@ public class PhoneDTO implements Serializable {
 
     private String name;
     private int id;
-    private int offerId;
     private String url;
     private float price;
-    //TODO: make this a float and change the logic for parser
-    private String recommendedRetailPrice;
     private float averageRating;
     private String brand;
 
@@ -21,26 +18,22 @@ public class PhoneDTO implements Serializable {
     public PhoneDTO() {
     }
 
-    public PhoneDTO(String name, int id, int offerId, String url, float price, String recommendedRetailPrice, float averageRating, String brand) {
+    public PhoneDTO(String name, int id, String url, float price, float averageRating, String brand) {
         this.name = name;
         this.id = id;
-        this.offerId = offerId;
         this.url = url;
         this.price = price;
-        this.recommendedRetailPrice = recommendedRetailPrice;
         this.brand = brand;
         this.averageRating = averageRating;
     }
 
-    public PhoneDTO(String phoneName, int phoneId, int phoneOfferId, String phoneUrl, float phonePrice, String phoneBrand) {
+    public PhoneDTO(String phoneName, int phoneId, String phoneUrl, float phonePrice, String phoneBrand) {
         this.name = phoneName;
         this.id = phoneId;
-        this.offerId = phoneOfferId;
         this.url = phoneUrl;
         this.price = phonePrice;
         this.brand = phoneBrand;
     }
-
 
 
     public String getName() {
@@ -59,14 +52,6 @@ public class PhoneDTO implements Serializable {
         this.id = id;
     }
 
-    public int getOfferId() {
-        return offerId;
-    }
-
-    public void setOfferId(int offerId) {
-        this.offerId = offerId;
-    }
-
     public String getUrl() {
         return url;
     }
@@ -81,14 +66,6 @@ public class PhoneDTO implements Serializable {
 
     public void setPrice(float price) {
         this.price = price;
-    }
-
-    public String getRecommendedRetailPrice() {
-        return recommendedRetailPrice;
-    }
-
-    public void setRecommendedRetailPrice(String recommendedRetailPrice) {
-        this.recommendedRetailPrice = recommendedRetailPrice;
     }
 
     public String getBrand() {
@@ -112,10 +89,8 @@ public class PhoneDTO implements Serializable {
         return "PhoneDTO{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
-                ", offerId=" + offerId +
                 ", url='" + url + '\'' +
                 ", price=" + price +
-                ", recommendedRetailPrice=" + recommendedRetailPrice +
                 ", averageRating=" + averageRating +
                 ", brand='" + brand + '\'' +
                 '}';
